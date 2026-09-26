@@ -1,0 +1,159 @@
+{
+  "project_name": "WORKNOON AI Customer Support Refund System",
+  "app_type": "hybrid_fullstack",
+  "archetype": "THE PERFORMANCE PRO & SWISS HYBRID",
+  "brand_identity": {
+    "company": "WORKNOON",
+    "domain": "Startup Jobs-Search & Recruitment Platform",
+    "tone": "Classy, authoritative, high-precision, trustworthy, warm-tech",
+    "logo_concept": "Deep purple circular icon with minimalist white 'W'",
+    "design_motto": "Intelligent Automation with Human-Grade Clarity"
+  },
+  "typography": {
+    "google_fonts_import": "@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap');",
+    "font_families": {
+      "headings": "'Plus Jakarta Sans', sans-serif",
+      "body": "'Plus Jakarta Sans', sans-serif",
+      "mono": "'JetBrains Mono', monospace"
+    },
+    "hierarchy": {
+      "hero_title": "text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight",
+      "section_heading": "text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100",
+      "card_title": "text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-100",
+      "body": "text-sm sm:text-base font-normal text-slate-600 dark:text-slate-300 leading-relaxed",
+      "meta_label": "text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400",
+      "code_data": "font-mono text-xs sm:text-sm text-purple-900 dark:text-purple-200"
+    }
+  },
+  "colors": {
+    "primary_indigo": {
+      "50": "#F5F3FF",
+      "100": "#EDE9FE",
+      "200": "#DDD6FE",
+      "500": "#6366F1",
+      "700": "#4C1D95",
+      "800": "#3B1E78",
+      "900": "#2E1065",
+      "950": "#1E0A45"
+    },
+    "orange_accent": {
+      "100": "#FFEDD5",
+      "500": "#F97316",
+      "600": "#EA580C"
+    },
+    "decision_states": {
+      "approved": {
+        "badge_bg": "#ECFDF5",
+        "badge_text": "#047857",
+        "border": "#A7F3D0",
+        "indicator": "#10B981",
+        "dark_bg": "rgba(16, 185, 129, 0.15)",
+        "dark_text": "#6EE7B7"
+      },
+      "denied": {
+        "badge_bg": "#FEF2F2",
+        "badge_text": "#B91C1C",
+        "border": "#FECACA",
+        "indicator": "#EF4444",
+        "dark_bg": "rgba(239, 68, 68, 0.15)",
+        "dark_text": "#FCA5A5"
+      },
+      "escalated": {
+        "badge_bg": "#FFFBEB",
+        "badge_text": "#B45309",
+        "border": "#FDE68A",
+        "indicator": "#F59E0B",
+        "dark_bg": "rgba(245, 158, 11, 0.15)",
+        "dark_text": "#FCD34D"
+      }
+    },
+    "neutrals": {
+      "bg_light": "#FAF9FC",
+      "card_light": "#FFFFFF",
+      "border_light": "#E2E8F0",
+      "bg_dark": "#0D0A1A",
+      "card_dark": "#161228",
+      "border_dark": "#2E2848"
+    }
+  },
+  "layout_strategies": {
+    "navigation_header": {
+      "style": "Glassmorphism header with logo ('W' in deep purple circle), tab switch (Customer Refund Portal vs Admin Support Portal), connection status, and quick policy guide drawer trigger.",
+      "sticky": true,
+      "z_index": "z-50"
+    },
+    "customer_view": {
+      "layout": "Two-column grid on desktop (12 columns: 5 cols lookup & order context + policy card, 7 cols main refund request form & live AI evaluation result).",
+      "features": [
+        "Customer ID / Email quick lookup with realistic dummy suggestions (e.g. 'c_101 / john@worknoon.com', 'c_102 / sarah@techcorp.com')",
+        "Interactive Order Card selector displaying purchased subscription / job posting packages with amounts and order dates",
+        "Reason selector dropdown + detailed text area with character counter",
+        "Refund amount specification (Full vs Partial with custom amount input)",
+        "Dynamic Submit CTA with animated AI evaluation state (simulated neural processing animation)",
+        "Rich AI Decision Result Card featuring: Decision Badge (Approved/Denied/Escalated), Confidence Score Radial/Progress bar, Transparent Reasoning Summary, Policy Rules Matched, and Actionable Next Steps"
+      ]
+    },
+    "admin_view": {
+      "layout": "Password-protected security layer with passcode modal/card -> High-density analytical table layout with stats bar at the top.",
+      "features": [
+        "KPI Stats Bar: Total Requests, Approval Rate, Escalations Pending, Avg AI Confidence",
+        "Decision Filter Pills: All, Approved, Denied, Escalated with count badges",
+        "Search & Sortable Data Table: Customer Name, Order ID, Requested Amount, Decision, Confidence %, AI Reason preview, Timestamp",
+        "Request Detail Drawer / Modal: Complete Audit Trail breakdown, Raw JSON policy trace, Manual Override Controls (Approve/Deny/Escalate override with agent notes)",
+        "Refund Policy Configuration Tab / Drawer: View and edit active threshold rules (e.g. 14-day window, max partial amount limit)"
+      ]
+    }
+  },
+  "testability_guidelines": {
+    "rule": "Every single interactive element, form input, filter pill, modal, and critical display container MUST contain explicit data-testid attributes.",
+    "required_test_ids": [
+      "nav-brand-logo",
+      "nav-customer-tab",
+      "nav-admin-tab",
+      "customer-lookup-input",
+      "customer-lookup-button",
+      "order-select-dropdown",
+      "refund-reason-select",
+      "refund-description-input",
+      "refund-amount-type-full",
+      "refund-amount-type-partial",
+      "refund-amount-custom-input",
+      "submit-refund-request-button",
+      "ai-decision-card",
+      "ai-decision-status-badge",
+      "ai-confidence-score",
+      "ai-reasoning-text",
+      "ai-next-steps-list",
+      "admin-login-password-input",
+      "admin-login-submit-button",
+      "admin-search-input",
+      "admin-filter-pill-all",
+      "admin-filter-pill-approved",
+      "admin-filter-pill-denied",
+      "admin-filter-pill-escalated",
+      "admin-requests-table",
+      "admin-request-row-*",
+      "admin-view-detail-button-*",
+      "admin-detail-modal",
+      "admin-audit-trail-container",
+      "admin-override-approve-button",
+      "admin-override-deny-button",
+      "admin-policy-view-button"
+    ]
+  },
+  "media_assets": {
+    "image_urls": {
+      "support_avatar": "https://images.unsplash.com/photo-1772371272179-3ecc656fc677?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA6MDV8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBzdGFydHVwJTIwd29ya3NwYWNlJTIwY3VzdG9tZXIlMjBzdXBwb3J0JTIwYXZhdGFyJTIwam9iJTIwcmVjcnVpdG1lbnR8ZW58MHx8fHwxNzkwMzgxODY4fDA&ixlib=rb-4.1.0&q=85",
+      "office_workspace": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHwyfHxzdGFydHVwJTIwdGVhbSUyMG9mZmljZXxlbnwwfHx8fDE3OTAzODE4Nzd8MA&ixlib=rb-4.1.0&q=85",
+      "meeting_workspace": "https://images.unsplash.com/photo-1603201667141-5a2d4c673378?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzV8MHwxfHNlYXJjaHw0fHxzdGFydHVwJTIwdGVhbSUyMG9mZmljZXxlbnwwfHx8fDE3OTAzODE4Nzd8MA&ixlib=rb-4.1.0&q=85"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Inject Google Fonts link in public/index.html or index.css for Plus Jakarta Sans & JetBrains Mono.",
+    "Ensure dark/light mode toggle works seamlessly with crisp contrast across both views.",
+    "Implement realistic mock AI evaluation with loading animation (simulated evaluation delay 1.2s) when submitting customer requests.",
+    "Provide seed mock data in backend/frontend with at least 8 varied refund requests (mix of Approved, Denied, Escalated with detailed AI reasoning and audit steps).",
+    "Keep background overlays non-transparent (use solid or backdrop-blur-xl with border) to avoid unreadable text overlay errors.",
+    "Always maintain strict data-testid compliance on all form fields, buttons, and status displays for test runners."
+  ]
+}

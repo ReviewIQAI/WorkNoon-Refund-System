@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+@layer base {
+    :root {
+        --background: 260 40% 99%;
+        --foreground: 258 30% 12%;
+        --card: 0 0% 100%;
+        --card-foreground: 258 30% 12%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 258 30% 12%;
+        --primary: 261 73% 23%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 258 30% 96%;
+        --secondary-foreground: 261 73% 23%;
+        --muted: 258 25% 96%;
+        --muted-foreground: 258 12% 45%;
+        --accent: 24 94% 53%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 258 25% 90%;
+        --input: 258 25% 90%;
+        --ring: 261 73% 40%;
+        --radius: 0.75rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+/* Custom scrollbar for a polished feel */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: hsl(258 20% 82%); border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(261 40% 60%); }
+
+::selection { background: hsl(261 73% 23%); color: #fff; }
+
+.grain {
+    background-image: radial-gradient(hsl(261 73% 23% / 0.06) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
