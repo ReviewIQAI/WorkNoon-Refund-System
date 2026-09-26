@@ -6,6 +6,12 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
 
   backend:
     build: ./backend
@@ -21,7 +27,8 @@ services:
       - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@worknoon.com}
       - ADMIN_PASSWORD=${ADMIN_PASSWORD:-worknoon2026}
     depends_on:
-      - mongodb
+      mongodb:
+        condition: service_healthy
 
   frontend:
     build:
