@@ -6,6 +6,7 @@ ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / ".env")
 
 import os
+import re
 import uuid
 import logging
 from datetime import datetime, timezone
@@ -60,8 +61,8 @@ async def get_customers():
 
 @api_router.get("/customers/lookup")
 async def lookup_customer(q: str):
-    """Find a customer by customerId or email (case-insensitive)."""
-    query = q.strip()
+    """Find a customer by customerId or email (case-insensitive, exact match)."""
+    query = re.escape(q.strip())
     customer = await db.customers.find_one(
         {"$or": [
             {"customerId": {"$regex": f"^{query}$", "$options": "i"}},
@@ -165,7 +166,8 @@ async def refund_stats():
 
 
 @api_router.get("/refund/{decision_id}")
-async def get_decision(decision_id: str):
+async def get_decision(decision_id: str, admin=Depends(get_current_admin)):
+    # Protected: full detail (incl. audit trail + customer PII) is admin-only.
     decision = await db.refund_decisions.find_one({"decision_id": decision_id}, NO_ID)
     if not decision:
         raise HTTPException(status_code=404, detail="Decision not found.")
