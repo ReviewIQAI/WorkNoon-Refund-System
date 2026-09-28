@@ -2,9 +2,11 @@
 FROM node:20-alpine AS build
 WORKDIR /app
 
-COPY package.json yarn.lock ./
+# Copy only package.json (yarn.lock is optional and may be absent on a fresh clone).
+COPY package.json ./
+# No --frozen-lockfile so the build works whether or not yarn.lock is present.
 # Longer timeout keeps installs resilient on slower/home networks.
-RUN yarn install --frozen-lockfile --network-timeout 600000
+RUN yarn install --network-timeout 600000
 
 COPY . .
 ARG REACT_APP_BACKEND_URL
