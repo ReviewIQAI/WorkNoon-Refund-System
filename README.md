@@ -89,7 +89,7 @@ user on first startup — no separate seed command needed.
 **Admin dashboard** (`/admin`)
 ```
 Email:    admin@worknoon.com
-Password: worknoon2026
+Password: worknoon26
 ```
 
 ---
@@ -236,5 +236,6 @@ and any override), visible in the admin dashboard.
 
 ## 🎥 Video demo
 
-> _Add your Loom link here before submitting._
+> https://www.loom.com/share/d55ebb9ba60b46b78a7e99c14555ab6d
+
 > `https://www.loom.com/share/<your-video-id>`
