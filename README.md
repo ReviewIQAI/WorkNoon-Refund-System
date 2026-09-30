@@ -236,6 +236,6 @@ and any override), visible in the admin dashboard.
 
 ## 🎥 Video demo
 
-> https://www.loom.com/share/d55ebb9ba60b46b78a7e99c14555ab6d
+> https://www.loom.com/share/dd325898abd6414197bce3fcc5eca706
 
 > `https://www.loom.com/share/<your-video-id>`
